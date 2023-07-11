@@ -154,6 +154,14 @@ pm2 --name ps5-mqtt start npm -- start
 pm2 save
 ```
 
+## Installation of ESPHome
+
+```
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+pip3 install wheel esphome
+esphome dashboard --open-ui ESPHome
+```
+
 # Dashboards
 |Mobile|Tablet|
 |---|---|
