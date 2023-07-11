@@ -114,6 +114,9 @@
     - condition: sun
       after: sunrise
       before: sunset
+    - condition: state
+      entity_id: binary_sensor.bedroom_window
+      state: "off"
   action:
     - choose:
         - conditions:
