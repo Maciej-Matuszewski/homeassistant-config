@@ -4,7 +4,8 @@
     path: presence.yaml
     input:
       room: bedroom
-      force_dimmed: "{{ states('sensor.bedroom_bed') > '0' }}"
+      custom_condition: "{{ is_state('binary_sensor.bedroom_bed', 'on') }}"
+      custom_scene: scene.bedroom_night_occupied
 
 - id: "bedroom_remote"
   alias: Bedroom Remote

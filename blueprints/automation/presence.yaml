@@ -7,8 +7,21 @@ blueprint:
       selector:
         area:
 
-    force_dimmed:
-      name: Force dimmed
+    custom_condition:
+      name: Custom Condition
+      default: false
+      selector:
+        boolean: {}
+
+    custom_scene:
+      name: Custom Scene
+      default: []
+      selector:
+        entity:
+          domain: scene
+    
+    disabled:
+      name: Disabled
       default: false
       selector:
         boolean: {}
@@ -59,13 +72,15 @@ variables:
   dimmed_scene: 'scene.{{ room }}_dimmed'
   off_scene: 'scene.{{ room }}_off'
 
-  force_dimmed: !input force_dimmed
+  disabled: !input disabled
+  custom_condition: !input custom_condition
 
   maximum_illuminance: !input maximum_illuminance
   current_illuminance: >
     {{ states('sensor.' + room + '_illuminance') | int(default=0) }}
 
 condition:
+  - "{{ not disabled }}"
   - condition: template
     value_template: "{{ not is_state('media_player.' + room + '_tv', 'on') }}"
   - condition: template
@@ -82,13 +97,13 @@ action:
       sequence:
         - choose:
             - conditions:
-                - "{{ force_dimmed }}"
+                - "{{ custom_condition }}"
               sequence:
                 - service: scene.turn_on
                   data:
                     transition: 1
                   target:
-                    entity_id: scene.{{ room }}_night
+                    entity_id: !input custom_scene
             - conditions:
                 - condition: state
                   entity_id: input_boolean.night

@@ -4,6 +4,7 @@
     path: presence.yaml
     input:
       room: guest_room
+      disabled: "{{ states('calendar.guests_guests') == 'on' }}"
 
 - id: "guest_room_remote"
   alias: Guest Room Remote
