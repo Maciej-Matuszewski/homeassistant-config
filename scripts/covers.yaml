@@ -10,9 +10,8 @@ covers_open:
             {% set data.covers = data.covers + ['cover.' + area] %}
           {% endfor %}
 
-          {% set area = 'guest_room' %}
           {% if is_state('calendar.guests_guests', 'off') %}
-            {% set data.covers = data.covers + ['cover.' + area] %}
+            {% set data.covers = data.covers + ['cover.guest_room'] %}
           {% endif %}
 
           {{ data.covers }}
