@@ -32,11 +32,28 @@
   name: Bedroom Night
   icon: fapro:night
   entities:
+    light.bedroom_main_1:
+      state: 'on'
+      brightness: 10
+      color_temp: 500
+    light.bedroom_main_2:
+      state: 'off'
+    light.bedroom_main_3:
+      state: 'off'
+    light.bedroom_bed:
+      state: 'on'
+      brightness: 70
+      color_temp: 500
+
+- id: 'bedroom_night_occupied'
+  name: Bedroom Night Occupied
+  icon: fapro:night
+  entities:
     light.bedroom_main:
       state: 'off'
     light.bedroom_bed:
       state: 'on'
-      brightness: 26
+      brightness: 25
       color_temp: 500
 
 - id: 'bedroom_off'
