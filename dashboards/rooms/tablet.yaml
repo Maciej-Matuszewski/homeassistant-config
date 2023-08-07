@@ -99,7 +99,6 @@ cards:
               {'name': 'Temperature', 'entity': 'sensor.inside_temperature'},
             ]
 
-
           - type: custom:layout-card
             layout_type: custom:grid-layout
             layout:

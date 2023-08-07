@@ -40,7 +40,7 @@ m-theme:
   # Badge
   mush-badge-size: 16px
   mush-badge-icon-size: 0.75em
-  mush-badge-border-radius: 50%
+  mush-badge-border-radius: 12px
   # Icon
   mush-icon-border-radius: 50%
   mush-icon-size: 44px
@@ -108,18 +108,32 @@ m-theme:
 
   # HA variables
 
-  ha-card-border-radius: 34px
+  sidebar-icon-color: "var(--primary-text-color)"
+  sidebar-text-color: "var(--primary-text-color)"
+  sidebar-background-color: "var(--black-background-color)"
+
+  ha-card-border-radius: 14px
+  black-background-color: "rgba(0, 0, 0, 1)"
   primary-background-color: "#131313"
   secondary-background-color: "#202020"
   divider-color: var(--primary-background-color)
   app-header-text-color: "var(--primary-text-color)"
-  app-header-background-color: "rgba(80, 5, 70, 1)"
+  # app-header-background-color: "rgba(80, 5, 70, 1)"
+  app-header-background-color: var(--black-background-color)
   header-height: 44px
 
-  lovelace-background: left / cover no-repeat fixed url('https://static.vecteezy.com/system/resources/previews/000/693/323/original/abstract-gradient-pink-purple-stripes-on-purple-background-vector.jpg') 
+  # lovelace-background: left / cover no-repeat fixed url('https://static.vecteezy.com/system/resources/previews/000/693/323/original/abstract-gradient-pink-purple-stripes-on-purple-background-vector.jpg') 
+  lovelace-background: center / cover no-repeat fixed url('https://wallpapercave.com/wp/wp4411802.png')
+  # lovelace-background: left / cover no-repeat fixed url('https://wallpapercave.com/wp/wp8679395.png')
+
   ha-card-border-width: "0px"
   --vertical-stack-card-margin: "0px"
   ha-card-background: "var(--secondary-background-color)"
+  # ha-card-background: "rgba(0, 0, 0, 1)"
+
+  # tile-background: "rgba(29,29,29,0.7)"
+  tile-background: "rgba(40,40,40,0.55)"
+  tile-active-background: "rgba(240,240,240,1)"
   
   card-width: 280px
   card-width-scene: 180px

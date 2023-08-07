@@ -1,0 +1,79 @@
+# lovelace_gen
+type: conditional
+conditions:
+  - entity: {{ group_entity }}
+    state_not: 'off'
+  - entity: {{ group_entity }}
+    state_not: 'closed'
+  - entity: {{ group_entity }}
+    state_not: 'locked'
+  - entity: {{ group_entity }}
+    state_not: 'auto'
+  - entity: {{ group_entity }}
+    state_not: 'standby'
+  - entity: {{ group_entity }}
+    state_not: 'paused'
+  - entity: {{ group_entity }}
+    state_not: 'idle'
+  - entity: {{ group_entity }}
+    state_not: 'docked'
+  - entity: {{ group_entity }}
+    state_not: '0'
+  - entity: {{ group_entity }}
+    state_not: 'Ready'
+  - entity: {{ group_entity }}
+    state_not: 'Operational'
+  - entity: {{ group_entity }}
+    state_not: 'disarmed'
+card:
+  type: vertical-stack
+  cards:
+    - type: custom:button-card
+      template: subheader
+      name: {{ name }}
+
+    - type: custom:swipe-card
+      card_width: 260px
+      parameters:
+        centeredSlides: false
+        slidesPerView: auto
+        spaceBetween: 8
+        slidesOffsetBefore: 8
+        slidesOffsetAfter: 8
+      cards:
+        {% for item in entities %}
+        - type: conditional
+          conditions:
+            - entity: {{ item['entity'] }}
+              state_not: 'off'
+            - entity: {{ item['entity'] }}
+              state_not: 'closed'
+            - entity: {{ item['entity'] }}
+              state_not: 'locked'
+            - entity: {{ item['entity'] }}
+              state_not: 'auto'
+            - entity: {{ item['entity'] }}
+              state_not: 'standby'
+            - entity: {{ item['entity'] }}
+              state_not: 'paused'
+            - entity: {{ item['entity'] }}
+              state_not: 'idle'
+            - entity: {{ item['entity'] }}
+              state_not: 'docked'
+            - entity: {{ item['entity'] }}
+              state_not: '0'
+            - entity: {{ item['entity'] }}
+              state_not: 'Ready'
+            - entity: {{ item['entity'] }}
+              state_not: 'Operational'
+            - entity: {{ item['entity'] }}
+              state_not: 'disarmed'
+          card:
+            # type: tile
+            # entity: {{ item['entity'] }}
+            # name: {{ item['name'] }}
+            type: custom:button-card
+            entity: {{ item['entity'] }}
+            name: {{ item['name'] }}
+            template: tile
+        {% endfor %}

@@ -32,7 +32,7 @@ cards:
         entity: {{device['entity']}}
         name: {{device['name']}}
         template: 
-          - {{'tile_large' if device['large'] else 'tile'}}
+          - 'tile'
         tap_action:
           action: {{device['action'] if (device['action']) else 'toggle'}}
       {%- endmacro %}

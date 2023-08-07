@@ -20,7 +20,7 @@ tile_scene:
         games_playstation: 'Games PlayStation',
         games_xbox: 'Games Xbox',
         shower: 'Shower',
-        bathtub: 'Bath',
+        bath: 'Bath',
         cooking: 'Cooking',
         eating: 'Eating',
       }
@@ -39,7 +39,7 @@ tile_scene:
       - grid-template-rows: auto
       - grid-template-columns: 66px max-content
     card:
-      - background-color: rgba(29,29,29,0.5)
+      - background-color: var(--tile-background)
     icon:
       - border-radius: 0%
       - color: |
@@ -58,7 +58,7 @@ tile_scene:
                 games_playstation: 'light-blue',
                 games_xbox: 'green',
                 shower: 'teal',
-                bathtub: 'cyan',
+                bath: 'cyan',
                 cooking: 'light-green',
                 eating: 'lime'
             }
@@ -77,6 +77,6 @@ tile_scene:
         ]]]
       styles:
         card:
-          - background-color: rgba(240,240,240,1)
+          - background-color: var(--tile-active-background)
         name:
           - color: var(--primary-background-color)

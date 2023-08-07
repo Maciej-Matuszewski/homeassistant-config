@@ -3,9 +3,9 @@
 type: vertical-stack
 cards:
 
-  - type: custom:button-card
-    name: !secret home_name
-    template: header
+  # - type: custom:button-card
+  #   name: !secret home_name
+  #   template: header
 
   - !include
     - ../sections/status.yaml
@@ -36,9 +36,9 @@ cards:
     ]
 
   - !include
-    - ../sections/devices.yaml
-    - section: 'Security'
-      devices: [
+    - ../sections/entities.yaml
+    - name: 'Security'
+      entities: [
         {'name': 'Alarm', 'entity': 'alarm_control_panel.alarm', 'large': true, 'action': 'more-info'},
         {'name': 'Front Door Lock', 'entity': 'lock.front', 'action': 'more-info'},
         {'name': 'Driveway Door Lock', 'entity': 'lock.driveway', 'large': true, 'action': 'more-info'},
@@ -46,183 +46,140 @@ cards:
       ]
 
   - !include
-    - ../sections/devices.yaml
-    - section: 'Living Room'
-      navigate: 'living_room'
-      devices: [
-        {'name': 'Light', 'entity': 'light.living_room', 'large': true},
-        {'name': 'Curtain', 'entity': 'cover.living_room', 'action': 'more-info'},
-        {'name': 'TV', 'entity': 'media_player.living_room_tv', 'large': true},
-        {'name': 'Climate', 'entity': 'climate.living_room', 'action': 'more-info'},
+    - ../sections/active.yaml
+    - name: 'Lights'
+      group_entity: 'light.all'
+      entities: [
+        {'name': 'Living Room', 'entity': 'light.living_room'},
+        {'name': 'Kitchen', 'entity': 'light.kitchen'},
+        {'name': 'Dining Room', 'entity': 'light.dining_room'},
+        {'name': 'Office', 'entity': 'light.office'},
+        {'name': 'Hallway', 'entity': 'light.hallway'},
+        {'name': 'Toilet', 'entity': 'light.toilet'},
+        {'name': 'Utility Room', 'entity': 'light.utility_room'},
+        {'name': 'Bedroom', 'entity': 'light.bedroom'},
+        {'name': 'Studio', 'entity': 'light.studio'},
+        {'name': 'Dressing Room', 'entity': 'light.dressing_room'},
+        {'name': 'Landing', 'entity': 'light.landing'},
+        {'name': 'Bathroom', 'entity': 'light.bathroom'},
+        {'name': 'En-Suite', 'entity': 'light.en_suite'},
+        {'name': 'Printer Room', 'entity': 'light.printer_room'},
+        {'name': 'Guest Room', 'entity': 'light.guest_room'},
+        {'name': 'Garage', 'entity': 'light.garage'},
+        {'name': 'Front', 'entity': 'light.front'},
+        {'name': 'Driveway', 'entity': 'light.driveway'},
+        {'name': 'Garden', 'entity': 'light.garden'}
       ]
 
   - !include
-    - ../sections/devices.yaml
-    - section: 'Kitchen'
-      navigate: 'kitchen'
-      devices: [
-        {'name': 'Light', 'entity': 'light.kitchen', 'large': true},
-        {'name': 'Oven', 'entity': 'switch.kitchen_oven', 'action': 'more-info'},
-        {'name': 'Microwave', 'entity': 'switch.kitchen_microwave', 'action': 'more-info'},
-      ]   
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Dining Room'
-      navigate: 'dining_room'
-      devices: [
-        {'name': 'Main Light', 'entity': 'light.dining_room_main'},
-        {'name': 'Table Light', 'entity': 'light.dining_room_table', 'large': true},
-        {'name': 'Entrance Light', 'entity': 'light.dining_room_entrance'},
-        {'name': 'HomePod', 'entity': 'media_player.dining_room_homepod', 'large': true, 'action': 'more-info'},
-        {'name': 'TV', 'entity': 'media_player.dining_room_tv'},
-        {'name': 'Blinds', 'entity': 'cover.dining_room', 'large': true, 'action': 'more-info'},
-        {'name': 'Climate', 'entity': 'climate.dining_room', 'action': 'more-info'},
+    - ../sections/active.yaml
+    - name: 'Manual Control'
+      group_entity: 'group.switches'
+      entities: [
+        {'name': 'Living Room', 'entity': 'input_boolean.living_room'},
+        {'name': 'Kitchen', 'entity': 'input_boolean.kitchen'},
+        {'name': 'Dining Room', 'entity': 'input_boolean.dining_room'},
+        {'name': 'Office', 'entity': 'input_boolean.office'},
+        {'name': 'Hallway', 'entity': 'input_boolean.hallway'},
+        {'name': 'Toilet', 'entity': 'input_boolean.toilet'},
+        {'name': 'Utility Room', 'entity': 'input_boolean.utility_room'},
+        {'name': 'Bedroom', 'entity': 'input_boolean.bedroom'},
+        {'name': 'Studio', 'entity': 'input_boolean.studio'},
+        {'name': 'Dressing Room', 'entity': 'input_boolean.dressing_room'},
+        {'name': 'Landing', 'entity': 'input_boolean.landing'},
+        {'name': 'Bathroom', 'entity': 'input_boolean.bathroom'},
+        {'name': 'En-Suite', 'entity': 'input_boolean.en_suite'},
+        {'name': 'Printer Room', 'entity': 'input_boolean.printer_room'},
+        {'name': 'Guest Room', 'entity': 'input_boolean.guest_room'},
+        {'name': 'Outside', 'entity': 'input_boolean.outside'},
+        {'name': 'Garage', 'entity': 'input_boolean.garage'}
       ]
 
   - !include
-    - ../sections/devices.yaml
-    - section: 'Office'
-      navigate: 'office'
-      devices: [
-        {'name': 'Light', 'entity': 'light.office', 'large': true},
-        {'name': 'HomePod', 'entity': 'media_player.office_homepod', 'action': 'more-info'},
-        {'name': 'Blinds', 'entity': 'cover.office', 'large': true, 'action': 'more-info'},
-        {'name': 'Climate', 'entity': 'climate.office', 'action': 'more-info'},
+    - ../sections/active.yaml
+    - name: 'Doors'
+      group_entity: 'binary_sensor.doors'
+      entities: [
+        {'name': 'Front', 'entity': 'binary_sensor.front_door'},
+        {'name': 'Driveway', 'entity': 'binary_sensor.driveway_door'},
+        {'name': 'Kitchen', 'entity': 'binary_sensor.kitchen_door'},
+        {'name': 'Living Room', 'entity': 'binary_sensor.living_room_door'}
       ]
 
   - !include
-    - ../sections/devices.yaml
-    - section: 'Hallway'
-      navigate: 'hallway'
-      devices: [
-        {'name': 'Light', 'entity': 'light.hallway'},
-        {'name': 'Climate', 'entity': 'climate.hallway', 'action': 'more-info'},
+    - ../sections/active.yaml
+    - name: 'Windows'
+      group_entity: 'binary_sensor.windows'
+      entities: [
+        {'name': 'Living Room', 'entity': 'binary_sensor.living_room_window'},
+        {'name': 'Kitchen', 'entity': 'binary_sensor.kitchen_window'},
+        {'name': 'Dining Room', 'entity': 'binary_sensor.dining_room_window'},
+        {'name': 'Office', 'entity': 'binary_sensor.office_window'},
+        {'name': 'Toilet', 'entity': 'binary_sensor.toilet_window'},
+        {'name': 'Bedroom', 'entity': 'binary_sensor.bedroom_window'},
+        {'name': 'Studio', 'entity': 'binary_sensor.studio_window'},
+        {'name': 'Dressing Room', 'entity': 'binary_sensor.dressing_room_window'},
+        {'name': 'Bathroom', 'entity': 'binary_sensor.bathroom_window'},
+        {'name': 'En-Suite', 'entity': 'binary_sensor.en_suite_window'},
+        {'name': 'Guest Room', 'entity': 'binary_sensor.guest_room_window'}
       ]
 
   - !include
-    - ../sections/devices.yaml
-    - section: 'Toilet'
-      navigate: 'toilet'
-      devices: [
-        {'name': 'Light', 'entity': 'light.toilet'},
-        {'name': 'Climate', 'entity': 'climate.toilet', 'action': 'more-info'},
+    - ../sections/active.yaml
+    - name: 'Covers'
+      group_entity: 'cover.all'
+      entities: [
+        {'name': 'Living Room', 'entity': 'cover.living_room'},
+        {'name': 'Dining Room', 'entity': 'cover.dining_room'},
+        {'name': 'Office', 'entity': 'cover.office'},
+        {'name': 'Bedroom', 'entity': 'cover.bedroom'},
+        {'name': 'Studio', 'entity': 'cover.studio'},
+        {'name': 'Dressing Room', 'entity': 'cover.dressing_room'},
+        {'name': 'Guest Room', 'entity': 'cover.guest_room'}
       ]
 
   - !include
-    - ../sections/devices.yaml
-    - section: 'Utility Room'
-      navigate: 'utility_room'
-      devices: [
-        {'name': 'Light', 'entity': 'light.utility_room'},
-        {'name': 'Washing Machine', 'entity': 'switch.utility_room_washing_machine', 'action': 'more-info'}
+    - ../sections/active.yaml
+    - name: 'Media Players'
+      group_entity: 'binary_sensor.media_players'
+      entities: [
+        {'name': 'Living Room TV', 'entity': 'media_player.living_room_tv'},
+        {'name': 'Living Room Sonos', 'entity': 'media_player.living_room_sonos'},
+        {'name': 'Living Room Apple TV', 'entity': 'media_player.living_room_apple_tv'},
+        {'name': 'Living Room PlayStation 5', 'entity': 'media_player.living_room_playstation'},
+        {'name': 'Dining Room HomePod', 'entity': 'media_player.dining_room_homepod'},
+        {'name': 'Dining Room TV', 'entity': 'media_player.dining_room_tv'},
+        {'name': 'Dining Room Apple TV', 'entity': 'media_player.dining_room_apple_tv'},
+        {'name': 'Office HomePod', 'entity': 'media_player.office_homepod'},
+        {'name': 'Bedroom TV', 'entity': 'media_player.bedroom_tv'},
+        {'name': 'Bedroom Apple TV', 'entity': 'media_player.bedroom_apple_tv'},
+        {'name': 'Bedroom HomePod', 'entity': 'media_player.bedroom_homepod'},
+        {'name': 'Studio TV', 'entity': 'media_player.studio_tv'},
+        {'name': 'Studio HomePod', 'entity': 'media_player.studio_homepod'},
+        {'name': 'Studio PlayStation 5', 'entity': 'media_player.studio_playstation'},
+        {'name': 'Studio Xbox Series S', 'entity': 'media_player.studio_xbox'},
       ]
 
   - !include
-    - ../sections/devices.yaml
-    - section: 'Bedroom'
-      navigate: 'bedroom'
-      devices: [
-        {'name': 'Light', 'entity': 'light.bedroom'},
-        {'name': 'TV', 'entity': 'media_player.bedroom_tv'},
-        {'name': 'Blinds', 'entity': 'cover.bedroom', 'large': true, 'action': 'more-info'},
-        {'name': 'HomePod', 'entity': 'media_player.bedroom_homepod', 'action': 'more-info'},
-        {'name': 'iPhone Charger', 'entity': 'switch.bedroom_charger_iphone', 'large': true},
-        {'name': "Dominika's Charger", 'entity': 'switch.bedroom_charger_1', 'large': true},
-        {'name': 'Watch Charger', 'entity': 'switch.bedroom_charger_watch'},
-        {'name': 'Climate', 'entity': 'climate.bedroom', 'action': 'more-info'},
-        {'name': 'iPad Charger', 'entity': 'switch.bedroom_charger_ipad'}
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Studio'
-      navigate: 'studio'
-      devices: [
-        {'name': 'Light', 'entity': 'light.studio', 'large': true},
-        {'name': 'Lamp', 'entity': 'light.studio_desk_lamp'},
-        {'name': 'Monitor Light', 'entity': 'light.studio_monitor'},
-        {'name': 'TV', 'entity': 'media_player.studio_tv'},
-        {'name': 'HomePod', 'entity': 'media_player.studio_homepod', 'action': 'more-info', 'large': true},
-        {'name': 'PlayStation', 'entity': 'media_player.studio_playstation'},
-        {'name': 'Blinds', 'entity': 'cover.studio', 'action': 'more-info'},
-        {'name': 'Climate', 'entity': 'climate.studio', 'action': 'more-info'}
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Dressing Room'
-      navigate: 'dressing_room'
-      devices: [
-        {'name': 'Light', 'entity': 'light.dressing_room', 'large': true},
-        {'name': 'Blinds', 'entity': 'cover.dressing_room', 'action': 'more-info'},
-        {'name': 'Climate', 'entity': 'climate.dressing_room', 'action': 'more-info'}
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Landing'
-      navigate: 'landing'
-      devices: [
-        {'name': 'Light', 'entity': 'light.landing'},
-        {'name': 'Climate', 'entity': 'climate.landing', 'action': 'more-info'}
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Bathroom'
-      navigate: 'bathroom'
-      devices: [
-        {'name': 'Light', 'entity': 'light.bathroom'},
-        {'name': 'Climate', 'entity': 'climate.bathroom', 'action': 'more-info'}
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'En-Suite'
-      navigate: 'en_suite'
-      devices: [
-        {'name': 'Light', 'entity': 'light.en_suite'},
-        {'name': 'Climate', 'entity': 'climate.en_suite', 'action': 'more-info'}
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Printer Room'
-      navigate: 'printer_room'
-      devices: [
-        {'name': 'Light', 'entity': 'light.printer_room'}
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Guest Room'
-      navigate: 'guest_room'
-      devices: [
-        {'name': 'Light', 'entity': 'light.guest_room', 'large': true},
-        {'name': 'Blinds', 'entity': 'cover.guest_room', 'action': 'more-info'},
-        {'name': 'Climate', 'entity': 'climate.guest_room', 'action': 'more-info'}
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Outside'
-      navigate: 'outside'
-      devices: [
-        {'name': 'Front Door Lock', 'entity': 'lock.front', 'action': 'more-info'},
-        {'name': 'Driveway Door Lock', 'entity': 'lock.driveway', 'action': 'more-info'},
-        {'name': 'Front Light', 'entity': 'light.front', 'large': true},
-        {'name': 'Driveway Light', 'entity': 'light.driveway'},
-        {'name': 'Garden Light', 'entity': 'light.garden'},
-      ]
-
-  - !include
-    - ../sections/devices.yaml
-    - section: 'Garage'
-      navigate: 'garage'
-      devices: [
-        {'name': 'Light', 'entity': 'light.garage'},
-        {'name': 'Door', 'entity': 'cover.garage', 'action': 'more-info'}
+    - ../sections/active.yaml
+    - name: 'Other'
+      group_entity: 'sensor.time'
+      entities: [
+        {'name': 'Oven', 'entity': 'switch.kitchen_oven'},
+        {'name': 'Microwave', 'entity': 'switch.kitchen_microwave'},
+        {'name': 'Washing Machine', 'entity': 'switch.utility_room_washing_machine'},
+        {'name': "Dominika's Charger", 'entity': 'switch.bedroom_charger_1'},
+        {'name': "Maciej's iPhone Charger", 'entity': 'switch.bedroom_charger_iphone'},
+        {'name': "Maciej's Watch Charger", 'entity': 'switch.bedroom_charger_watch'},
+        {'name': "Maciej's iPad Charger", 'entity': 'switch.bedroom_charger_ipad'},
+        {'name': 'Bedroom USB', 'entity': 'switch.bedroom_usb'},
+        {'name': 'Bedroom Socket', 'entity': 'switch.bedroom_socket'},
+        {'name': 'Roomba i7+', 'entity': 'vacuum.roomba_i7'},
+        {'name': 'Braava jet m6', 'entity': 'vacuum.braava_jet_m6'},
+        {'name': 'Roomba 676', 'entity': 'vacuum.roomba_676'},
+        {'name': 'Gardena Sileno', 'entity': 'vacuum.gardena_sileno'},
+        {'name': 'Smart Garden', 'entity':'switch.kitchen_smart_garden'},
+        {'name': 'Bins', 'entity': 'input_boolean.kitchen_bins'},
       ]
 
   - type: custom:button-card

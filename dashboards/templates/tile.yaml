@@ -59,10 +59,10 @@ tile:
         return 'grey';
       ]]]
   tap_action:
-    action: toggle
+    action: more-info
     haptic: success
   hold_action:
-    action: more-info
+    action: toggle
     haptic: success
   styles:
     grid:
@@ -72,7 +72,7 @@ tile:
     card:
       - border-radius: 20px
       - height: 70px
-      - background-color: rgba(240,240,240,1)
+      - background-color: var(--tile-active-background)
       - '-webkit-backdrop-filter': blur(20px)
       - padding: 0px
     icon:
@@ -115,7 +115,7 @@ tile:
         ]]]
       styles:
         card:
-          - background-color: rgba(29,29,29,0.7)
+          - background-color: var(--tile-background)
         name:
           - color: var(--primary-text-color)
         label:
@@ -123,7 +123,7 @@ tile:
         state:
           - color: var(--secondary-text-color)
         icon:
-          - background-color: rgba(49,49,49,0.7)
+          - background-color: rgba(69,69,69,1)
           - color: "[[[ return 'rgba(var(--mush-rgb-' + variables.color +'), 1)'; ]]]"
 
     - operator: template

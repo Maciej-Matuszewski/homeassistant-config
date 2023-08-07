@@ -17,7 +17,7 @@ cards:
       - type: custom:button-card
         entity: {{domain}}.{{id}}
         name: {{name}}
-        template: {{'tile_large' if large else 'tile'}}
+        template: tile
       {%- endmacro %}
 
 

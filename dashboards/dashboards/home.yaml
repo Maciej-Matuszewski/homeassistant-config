@@ -9,6 +9,13 @@ views:
     cards:
       - !include ../rooms/home.yaml
   - theme: Backend-selected
+    title: 'Rooms'
+    path: 'list'
+    subview: false
+    type: panel
+    cards:
+      - !include ../rooms/list.yaml
+  - theme: Backend-selected
     title: 'Living Room'
     path: 'living_room'
     subview: true

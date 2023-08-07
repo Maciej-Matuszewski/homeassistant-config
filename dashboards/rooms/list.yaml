@@ -1,0 +1,251 @@
+# lovelace_gen
+
+type: custom:layout-card
+layout_type: custom:grid-layout
+layout:
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: masonry
+  mediaquery:
+    "(max-width: 600px)":
+      grid-template-columns: 1fr
+cards:
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: subheader
+        name: Ground Floor
+
+      - type: grid
+        square: false
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Living Room'
+            entity: 'light.living_room'
+            icon: fapro:tv
+            variables:
+              color: indigo
+            tap_action:
+              action: navigate
+              navigation_path: 'living_room'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Kitchen'
+            entity: 'light.kitchen'
+            icon: mdi:chef-hat
+            variables:
+              color: lime
+            tap_action:
+              action: navigate
+              navigation_path: 'kitchen'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Dining Room'
+            entity: 'light.dining_room'
+            icon: fapro:silverwere
+            variables:
+              color: light-green
+            tap_action:
+              action: navigate
+              navigation_path: 'dining_room'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Office'
+            entity: 'light.office'
+            icon: fapro:macbook
+            variables:
+              color: pink
+            tap_action:
+              action: navigate
+              navigation_path: 'office'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Hallway'
+            entity: 'light.hallway'
+            icon: mdi:shoe-print
+            variables:
+              color: blue-grey
+            tap_action:
+              action: navigate
+              navigation_path: 'hallway'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Toilet'
+            entity: 'light.toilet'
+            icon: mdi:toilet
+            variables:
+              color: brown
+            tap_action:
+              action: navigate
+              navigation_path: 'toilet'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Utility Room'
+            entity: 'light.utility_room'
+            icon: mdi:washing-machine
+            variables:
+              color: light-blue
+            tap_action:
+              action: navigate
+              navigation_path: 'utility_room'
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:button-card
+        template: subheader
+        name: First Floor
+
+      - type: grid
+        square: false
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Bedroom'
+            entity: 'light.bedroom'
+            icon: fapro:bed
+            variables:
+              color: teal
+            tap_action:
+              action: navigate
+              navigation_path: 'bedroom'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Studio'
+            entity: 'light.studio'
+            icon: mdi:controller
+            variables:
+              color: deep-purple
+            tap_action:
+              action: navigate
+              navigation_path: 'studio'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Dressing Room'
+            entity: 'light.dressing_room'
+            icon: mdi:hanger
+            variables:
+              color: purple
+            tap_action:
+              action: navigate
+              navigation_path: 'dressing_room'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Landing'
+            entity: 'light.landing'
+            icon: mdi:stairs
+            variables:
+              color: blue-grey
+            tap_action:
+              action: navigate
+              navigation_path: 'landing'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Bathroom'
+            entity: 'light.bathroom'
+            icon: mdi:bathtub
+            variables:
+              color: light-blue
+            tap_action:
+              action: navigate
+              navigation_path: 'bathroom'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'En-Suite'
+            entity: 'light.en_suite'
+            icon: mdi:shower-head
+            variables:
+              color: light-blue
+            tap_action:
+              action: navigate
+              navigation_path: 'en_suite'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Printer Room'
+            entity: 'light.printer_room'
+            icon: mdi:printer-3d-nozzle
+            variables:
+              color: grey
+            tap_action:
+              action: navigate
+              navigation_path: 'printer_room'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Guest Room'
+            entity: 'light.guest_room'
+            icon: fapro:suitcase
+            variables:
+              color: deep-orange
+            tap_action:
+              action: navigate
+              navigation_path: 'guest_room'
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: subheader
+        name: Outside
+
+      - type: grid
+        square: false
+        columns: 2
+        cards:
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Outside'
+            entity: 'light.outside'
+            icon: fapro:tree
+            variables:
+              color: green
+            tap_action:
+              action: navigate
+              navigation_path: 'outside'
+
+          - type: custom:button-card
+            template: tile
+            show_state: false
+            name: 'Garage'
+            entity: 'light.garage'
+            icon: fapro:garage
+            variables:
+              color: cyan
+            tap_action:
+              action: navigate
+              navigation_path: 'garage'
+
+  - type: custom:button-card
+    template: gap

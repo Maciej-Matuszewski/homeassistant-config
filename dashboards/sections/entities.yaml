@@ -1,0 +1,23 @@
+# lovelace_gen
+
+type: vertical-stack
+cards:
+  - type: custom:button-card
+    template: subheader
+    name: {{ name }}
+
+  - type: custom:swipe-card
+    card_width: 260px
+    parameters:
+      centeredSlides: false
+      slidesPerView: auto
+      spaceBetween: 8
+      slidesOffsetBefore: 8
+      slidesOffsetAfter: 8
+    cards:
+      {% for item in entities %}
+      - type: custom:button-card
+        entity: {{ item['entity'] }}
+        name: {{ item['name'] }}
+        template: tile
+      {% endfor %}

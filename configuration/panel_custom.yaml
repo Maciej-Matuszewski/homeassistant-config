@@ -28,122 +28,122 @@
   config:
     ingress: core_configurator
 
-- name: living_room
-  sidebar_title: Living Room
-  sidebar_icon: fapro:tv
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/living_room'
-  embed_iframe: false
-  require_admin: false
-- name: kitchen
-  sidebar_title: Kitchen
-  sidebar_icon: mdi:chef-hat
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/kitchen'
-  embed_iframe: false
-  require_admin: false
-- name: dining_room
-  sidebar_title: Dining Room
-  sidebar_icon: fapro:silverwere
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/dining_room'
-  embed_iframe: false
-  require_admin: false
-- name: office
-  sidebar_title: Office
-  sidebar_icon: fapro:macbook
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/office'
-  embed_iframe: false
-  require_admin: false
-- name: toilet
-  sidebar_title: Toilet
-  sidebar_icon: mdi:toilet
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/toilet'
-  embed_iframe: false
-  require_admin: false
-- name: utility_room
-  sidebar_title: Utility Room
-  sidebar_icon: mdi:washing-machine
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/utility_room'
-  embed_iframe: false
-  require_admin: false
-- name: hallway
-  sidebar_title: Hallway
-  sidebar_icon: mdi:shoe-print
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/hallway'
-  embed_iframe: false
-  require_admin: false
-- name: studio
-  sidebar_title: Studio
-  sidebar_icon: mdi:controller
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/studio'
-  embed_iframe: false
-  require_admin: false
-- name: bedroom
-  sidebar_title: Bedroom
-  sidebar_icon: fapro:bed
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/bedroom'
-  embed_iframe: false
-  require_admin: false
-- name: dressing_room
-  sidebar_title: Dressing Room
-  sidebar_icon: mdi:hanger
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/dressing_room'
-  embed_iframe: false
-  require_admin: false
-- name: guest_room
-  sidebar_title: Guest Room
-  sidebar_icon: fapro:suitcase
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/guest_room'
-  embed_iframe: false
-  require_admin: false
-- name: printer_room
-  sidebar_title: Printer Room
-  sidebar_icon: mdi:printer-3d-nozzle
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/printer_room'
-  embed_iframe: false
-  require_admin: false
-- name: bathroom
-  sidebar_title: Bathroom
-  sidebar_icon: mdi:bathtub
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/bathroom'
-  embed_iframe: false
-  require_admin: false
-- name: en-suite
-  sidebar_title: En-Suite
-  sidebar_icon: mdi:shower-head
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/en_suite'
-  embed_iframe: false
-  require_admin: false
-- name: landing
-  sidebar_title: Landing
-  sidebar_icon: mdi:stairs
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/landing'
-  embed_iframe: false
-  require_admin: false
-- name: garage
-  sidebar_title: Garage
-  sidebar_icon: fapro:garage
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/garage'
-  embed_iframe: false
-  require_admin: false
-- name: outside
-  sidebar_title: Outside
-  sidebar_icon: fapro:tree
-  js_url: /api/hassio/app/entrypoint.js
-  url_path: 'dashboard-home/outside'
-  embed_iframe: false
-  require_admin: false
+# - name: living_room
+#   sidebar_title: Living Room
+#   sidebar_icon: fapro:tv
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/living_room'
+#   embed_iframe: false
+#   require_admin: false
+# - name: kitchen
+#   sidebar_title: Kitchen
+#   sidebar_icon: mdi:chef-hat
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/kitchen'
+#   embed_iframe: false
+#   require_admin: false
+# - name: dining_room
+#   sidebar_title: Dining Room
+#   sidebar_icon: fapro:silverwere
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/dining_room'
+#   embed_iframe: false
+#   require_admin: false
+# - name: office
+#   sidebar_title: Office
+#   sidebar_icon: fapro:macbook
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/office'
+#   embed_iframe: false
+#   require_admin: false
+# - name: toilet
+#   sidebar_title: Toilet
+#   sidebar_icon: mdi:toilet
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/toilet'
+#   embed_iframe: false
+#   require_admin: false
+# - name: utility_room
+#   sidebar_title: Utility Room
+#   sidebar_icon: mdi:washing-machine
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/utility_room'
+#   embed_iframe: false
+#   require_admin: false
+# - name: hallway
+#   sidebar_title: Hallway
+#   sidebar_icon: mdi:shoe-print
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/hallway'
+#   embed_iframe: false
+#   require_admin: false
+# - name: studio
+#   sidebar_title: Studio
+#   sidebar_icon: mdi:controller
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/studio'
+#   embed_iframe: false
+#   require_admin: false
+# - name: bedroom
+#   sidebar_title: Bedroom
+#   sidebar_icon: fapro:bed
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/bedroom'
+#   embed_iframe: false
+#   require_admin: false
+# - name: dressing_room
+#   sidebar_title: Dressing Room
+#   sidebar_icon: mdi:hanger
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/dressing_room'
+#   embed_iframe: false
+#   require_admin: false
+# - name: guest_room
+#   sidebar_title: Guest Room
+#   sidebar_icon: fapro:suitcase
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/guest_room'
+#   embed_iframe: false
+#   require_admin: false
+# - name: printer_room
+#   sidebar_title: Printer Room
+#   sidebar_icon: mdi:printer-3d-nozzle
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/printer_room'
+#   embed_iframe: false
+#   require_admin: false
+# - name: bathroom
+#   sidebar_title: Bathroom
+#   sidebar_icon: mdi:bathtub
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/bathroom'
+#   embed_iframe: false
+#   require_admin: false
+# - name: en-suite
+#   sidebar_title: En-Suite
+#   sidebar_icon: mdi:shower-head
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/en_suite'
+#   embed_iframe: false
+#   require_admin: false
+# - name: landing
+#   sidebar_title: Landing
+#   sidebar_icon: mdi:stairs
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/landing'
+#   embed_iframe: false
+#   require_admin: false
+# - name: garage
+#   sidebar_title: Garage
+#   sidebar_icon: fapro:garage
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/garage'
+#   embed_iframe: false
+#   require_admin: false
+# - name: outside
+#   sidebar_title: Outside
+#   sidebar_icon: fapro:tree
+#   js_url: /api/hassio/app/entrypoint.js
+#   url_path: 'dashboard-home/outside'
+#   embed_iframe: false
+#   require_admin: false

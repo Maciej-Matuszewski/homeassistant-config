@@ -18,3 +18,19 @@ switches:
     - input_boolean.studio
     - input_boolean.toilet
     - input_boolean.utility_room
+
+climate:
+  name: All Climate
+  entities:
+    - climate.bathroom
+    - climate.bedroom
+    - climate.dining_room
+    - climate.dressing_room
+    - climate.en_suite
+    - climate.guest_room
+    - climate.hallway
+    - climate.landing
+    - climate.living_room
+    - climate.office
+    - climate.studio
+    - climate.toilet

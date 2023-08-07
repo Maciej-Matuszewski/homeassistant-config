@@ -21,7 +21,7 @@ cards:
         entity: media_player.{{room}}_{{media_player['id']}}
         name: {{media_player['name']}}
         template:
-          - {{'tile_large' if media_player['large'] else 'tile'}}
+          - 'tile'
           - tap_info
       {%- endmacro %}
 
